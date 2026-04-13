@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Savdo - Eng yaxshi takliflar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🛒 OnlineSavdo</div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Mahsulot qidirish...">
+                <button onclick="searchProducts()">🔍</button>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 Savat <span id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <button class="category-btn active" onclick="filterCategory('all')">Barchasi</button>
+            <button class="category-btn" onclick="filterCategory('electronics')">Elektronika</button>
+            <button class="category-btn" onclick="filterCategory('clothing')">Kiyimlar</button>
+            <button class="category-btn" onclick="filterCategory('home')">Uy-ro'zg'or</button>
+            <button class="category-btn" onclick="filterCategory('sports')">Sport</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="hero">
+            <h1>Xush kelibsiz! 🔥</h1>
+            <p>Eng sifatli mahsulotlar eng yaxshi narxlarda!</p>
+        </div>
+
+        <div id="productsGrid" class="products-grid"></div>
+    </main>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>🛒 Savat</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <strong>Jami: <span id="cartTotal">0</span> so'm</strong>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Buyurtma berish</button>
+        </div>
+    </div>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content product-detail">
+            <span class="close" onclick="closeProductDetail()">&times;</span>
+            <div id="productDetail"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 OnlineSavdo. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
